@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>순듀야 용돈 보내기 베타</title>
+  <title>지니야 용돈 보내기 베타</title>
   <style>
     body { margin:0; padding:0; background:#ff9a9e; font-family:"LG Smart UI",sans-serif; color:white; }
     .full { width:1920px; height:1080px; display:flex; align-items:center; justify-content:center; flex-direction:column; }
@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="full">
-  <div class="msg listen">순듀야~</div>
+  <div class="msg listen">지니야~</div>
   <div class="msg" id="status">듣고 있어요… TV 리모컨 마이크 버튼 누르고 말씀하세요</div>
   <div class="result" id="result"></div>
   <button onclick="startListening()">마이크 테스트 시작</button>
@@ -37,8 +37,8 @@ if ('webkitSpeechRecognition' in window) {
     const said = event.results[event.results.length-1][0].transcript.trim();
     status.textContent = `"${said}" 들었어요!`;
     
-    // 핵심: 순듀야 + 금액 파싱
-    if (said.includes('순듀야')) {
+    // 핵심: 지니야 + 금액 파싱
+    if (said.includes('지니야')) {
       let amount = 0;
       if (said.includes('오만') || said.includes('5만')) amount = 50000;
       if (said.includes('십만') || said.includes('10만')) amount = 100000;
